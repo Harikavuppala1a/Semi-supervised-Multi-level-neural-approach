@@ -33,4 +33,4 @@ training.
 deep learning baselines.
 20. config_traditional_ML.txt: It is a configuration file for the traditional ML methods.
 
-Tuned hyper-parameters_TSC.pdf: It contains all the hyperparameters.
+Tuned hyper-parameters.pdf: It contains all the hyperparameters.
