@@ -1,0 +1,94 @@
+model_types = ["hier_fuse"];
+word_feats_l = [[{'emb': 'elmo', 's_enc': 'rnn', 'm_id': '11'}, {'emb': 'glove', 's_enc': 'rnn', 'm_id': '21'}]];
+sent_enc_feats_l = [[{'emb': 'trainable_tbert', 'm_id': '1'}]];
+num_cnn_filters = [100]; rnn_dims = [300]; att_dims = [400];
+rnn_types = ['lstm']; stack_rnn_flags = [False]; threshes = [0]; cnn_kernel_sets = [[2,3,4]];max_pool_k_vals = [1];
+prob_trans_types = ["di"]; class_imb_flags = [True];
+**********
+test_mode = True
+gen_att = False
+gen_inst_res = True
+insights_iteration = False
+augment_data = True
+merge = False
+
+use_conf_scores = False
+gen_conf_scores = False
+scale_value =0.0
+scaling_confscores = "None"
+conf_score_filename_list = ["saved/raw_conf_scores_intersection_diversity.label_support.weakest_trainable_tbert_0.750000_0.900000_0.000000_0.000000_0.000000_0.000000_3_8cat.pickle","saved/raw_conf_scores_intersection_diversity.label_support.weakest_trainable_tbert_0.750000_0.900000_0.000000_0.000000_0.000000_0.000000_3_15cat.pickle","saved/raw_conf_scores_intersection_diversity.label_support.weakest_trainable_tbert_0.750000_0.900000_0.000000_0.000000_0.000000_0.000000_3_23cat.pickle"]
+
+augment_data_filename = "augment_raw_data_3.pickle"
+original_elmo_folderpath = "saved/word_vecs~elmo/False/"
+augment_data_elmo_folderpath = "saved/word_vecs~elmo~augment_raw_data_3/False/"
+augment_index_filename ="saved/index_0.8_0.75_3.txt"
+original_bert_file = "saved/sent_enc_feat~trainable_tbert~True~totalDat.h5"
+augment_data_bert_filename = "saved/sent_enc_feat~trainable_tbert~True~augment_raw_data_3.h5"
+
+confidence_thr = 0.0
+st_variant = "intersection_diversity.label_support.weakest"
+retaining_ratio = 0.0
+
+supervised_data_filename = "raw_data~data~0.15~0.15~22~35~True.pickle"
+totalraw_data_filename = "totalraw_data.pickle"
+
+single_inp_tasks_list = []
+sep_inp_tasks_list = []
+classi_loss_weight = 0.0
+multi_task_tl = "None"
+share_weights_sep_mt = False
+
+train_ratio = 1
+uncorr_c_pairs_filename = ""
+beta = 0.0
+label_corr_setting = "None"
+
+GPU_ID = '5'
+
+use_saved_model = True 
+save_model = True
+
+use_saved_sent_enc_feats = True
+save_sent_enc_feats = True
+
+use_saved_word_feats = True
+save_word_feats = True
+
+poss_sent_enc_feats_emb_dict = {'use': 512, 'infersent': 4096, 'bert': 1024, 'bert_pre': 768,'trainable_bert' : 768}
+poss_word_feats_emb_dict = {'glove': 300, 'ling': 33, 'elmo': 3072, 'fasttext': 300}
+
+dropO1 = 0.25
+dropO2 = 0.25
+LEARN_RATE = 0.001
+
+BATCH_SIZE = 64
+EPOCHS = 10
+num_runs_list = [3]
+MAX_WORDS_SENT = 35
+MAX_SENT = 16
+MAX_WORDS_POST = 198
+RANDOM_STATE = 22
+TEST_RATIO = 0.15
+VALID_RATIO = 0.15
+
+prob = 0.5
+num_iter = 4
+bert_max_seq_len= 200
+max_num_pred_labs = 7
+min_num_pred_labs = 4
+max_weak_lab_support = 1300
+
+bert_max_seq_len = 256
+bert_path = "saved/tbert-hubmodule"
+tbert_paths = {"config_path" : "../bert/tmp/bert_model/bert_config.json", "vocab_path" : "../bert/tmp/bert_model/vocab.txt", "ckpt_path" : "../bert/tmp/bert_model/model.ckpt-100000"}
+n_fine_tune_layers = 0
+output_representation = "sequence_output"
+bert_trainable = True
+
+filename = 'sexismClassi.csv'
+filename_map_list = ['23_class_maps.txt']
+res_filename = "results.txt"
+res_tsv_filename = "tsv.txt"
+output_folder_name = "results/"
+data_folder_name = "data/"
+save_folder_name = "saved/"
